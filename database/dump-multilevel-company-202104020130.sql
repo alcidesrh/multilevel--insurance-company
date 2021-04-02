@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.33, for Linux (x86_64)
 --
--- Host: localhost    Database: dnf
+-- Host: localhost    Database: multilevel-company
 -- ------------------------------------------------------
 -- Server version	5.7.33-0ubuntu0.18.04.1
 
@@ -1004,7 +1004,7 @@ CREATE TABLE `roles` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1164,7 +1164,7 @@ INSERT INTO `users` VALUES (1,'new name','tech@dnakamafaction.com',NULL,'$2y$10$
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'dnf'
+-- Dumping routines for database 'multilevel-company'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -1176,4 +1176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-31  1:03:37
+-- Dump completed on 2021-04-02  1:30:49
