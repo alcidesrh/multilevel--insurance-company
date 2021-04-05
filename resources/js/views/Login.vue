@@ -315,7 +315,7 @@ export default {
   position: absolute;
   max-width: 400px;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4) !important;
   top: 50%;
   margin-top: -285px;
 }
@@ -326,7 +326,7 @@ export default {
     top: 0;
     margin-top: 0px;
     height: 100%;
-    background-color: transparent
+    background-color: transparent !important;
   }
 }
 
