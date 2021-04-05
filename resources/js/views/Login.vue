@@ -177,7 +177,6 @@ export default {
 
   watch: {
     item(val) {
-      console.log(val);
       this.loading = true;
       this.$store
         .dispatch("user/authenticate", {
@@ -272,7 +271,6 @@ export default {
         0,
         ...[{ header: "Role Broker" }, { divider: true }]
       );
-      console.log(this.items);
     });
   },
 };

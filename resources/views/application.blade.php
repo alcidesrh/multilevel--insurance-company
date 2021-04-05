@@ -23,7 +23,7 @@
     <script>
         var user = '{!! json_encode($user) !!}';
     </script>
-    <script src="{{ asset('js/application.js') }}"></script>
+    <script src="{{ mix('js/application.js') }}"></script>
 </body>
 
 </html>

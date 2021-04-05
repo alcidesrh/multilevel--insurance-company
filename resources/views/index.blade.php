@@ -36,7 +36,7 @@
     <script>
         var data = '{!! json_encode($data) !!}';
     </script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ mix('js/main.js') }}"></script>
 </body>
 
 </html>
