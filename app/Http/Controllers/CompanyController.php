@@ -130,7 +130,7 @@ class CompanyController extends Controller
     {
         return new GenericResourceCollection(
             User::where('role_id', '!=', User::getRole('agency'))->where('company_id', $request->id)->paginate($request->get('perPage')),
-             ['id', 'fullName', 'email', 'active', 'image', ['role' => ['slug', 'name']]]);        
+             ['id', 'fullName', 'email', 'active', ['image' => ['url']], ['role' => ['slug', 'name']]]);        
     }
 
     public function delete($id)

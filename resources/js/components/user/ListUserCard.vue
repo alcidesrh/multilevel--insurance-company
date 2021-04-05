@@ -38,10 +38,10 @@
           {{item.phone}}
         </v-list-item-subtitle>
 
-        <v-list-item-title class="my-3">
+        <v-list-item-title class="my-3" v-show="item.parent">
           <div class="mb-2">
             Upline:
-            <label v-show="item.parent">
+            <label >
               {{item.parent}}
               <span>({{item.parent_number}})</span>
             </label>

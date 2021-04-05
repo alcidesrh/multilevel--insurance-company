@@ -27,9 +27,9 @@ class CompanyEditResource extends JsonResource
             'address' => $this->address,
             'phone' => $this->phone,
             'active' => $this->active,
-            'owner' => $admin instanceof User ? new GenericResource($admin, ['id', 'name', 'image']) : null,
+            'owner' => $admin instanceof User ? new GenericResource($admin, ['id', 'name', ['image' => ['url']]]) : null,
             'image' => $image ? new GenericResource($image, ['id', 'name', 'url']) : null,
-            'personal' => new GenericResourceCollection(User::where('role_id', '!=', User::getRole('agency'))->where('company_id', $this->id)->get(), ['id', 'name', 'image']),
+            'personal' => new GenericResourceCollection(User::where('role_id', '!=', User::getRole('agency'))->where('company_id', $this->id)->get(), ['id', 'name', ['image' => ['url']]]),
 
         ];
     }

@@ -21,6 +21,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Alcidesrh\Generic\GenericResource;
 use App\Http\Resources\UserEditResource;
 use App\Http\Resources\UserListResource;
 use Illuminate\Support\Facades\Response;
@@ -231,7 +232,13 @@ class UserController extends Controller
             $query->orWhere('id', $request->parent);
         }
 
-        return new GenericResourceCollection($query->get(), ['id', ['name' => 'fullNameAndAcode'], 'number_account', 'image', 'email', 'role']);
+        return new GenericResourceCollection($query->get(), ['id', ['name' => 'fullNameAndAcode'], 'number_account', ['image' => ['url']], 'email', 'role']);
+    }
+
+    public function usersForSelectTest(Request $request)
+    {
+
+        return new GenericResourceCollection(User::whereIn('id', [172, 178, 160, 208, 122, 115, 117])->orderBy('role_id', 'asc')->get(), ['id', 'name', ['image' => ['url']], 'email', ['role' => ['slug']]]);
     }
 
     public function sendEmail(Request $request)
@@ -250,6 +257,8 @@ class UserController extends Controller
      */
     public function edit(Request $request)
     {
+        $user = User::find($request->get('id'));
+
         return new UserEditResource(User::find($request->get('id')));
     }
 
@@ -284,7 +293,8 @@ class UserController extends Controller
             if($item->is('agency')){
 
                 if(!($company = $item->company)){
-                 $company = $this->createCompany($input['company_name'], $item);
+                 if(isset($input['company_name']) && $input['company_name'])
+                  $company = $this->createCompany($input['company_name'], $item);
                 }
                 else{
                  $company->name = $input['company_name'];
@@ -363,7 +373,7 @@ class UserController extends Controller
 
             $item->save();
 
-            if($item->is('agency')){
+            if($item->is('agency') && isset($input['company_name']) && $input['company_name']){
                 $this->createCompany($input['company_name'], $item);
             }
 

@@ -8,6 +8,7 @@ use App\Models\Client;
 use App\Models\Subscription;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Insurance\InsuranceCar;
 use App\Models\Insurance\InsuranceHome;
@@ -57,6 +58,8 @@ class Util extends Command
      */
     public function handle()
     {
+        $password = Hash::make('123');
+        return;
         $this->info((now())->format('d/m/y'));
         $this->info(InsuranceObama::whereBetween('created_at', [(now())->sub('5 days')->startOfDay(), (now())->sub('5 days')->endOfDay()])->count());
         $cont = 1;

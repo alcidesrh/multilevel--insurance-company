@@ -7,8 +7,13 @@
       :mini-variant.sync="mini"
       :permanent="$vuetify.breakpoint.mdAndUp"
     >
-      <v-container class="mb-3" v-if="!mini">
+      <v-container class="mb-3" v-if="!mini && $vuetify.breakpoint.mdAndUp">
         <v-icon @click.stop="mini = !mini" class="rotate180 float-right"
+          >mdi-exit-to-app</v-icon
+        >
+      </v-container>
+      <v-container class="mb-3" v-if="$vuetify.breakpoint.smAndDown">
+        <v-icon @click.stop="drawer = !drawer" class="rotate180 float-right"
           >mdi-exit-to-app</v-icon
         >
       </v-container>
@@ -237,23 +242,23 @@
           </v-list-item>
         </v-list-group>
 
-        <v-list-item link @click="menuClick('comming-soon')" id="comming-soon">
+        <!-- <v-list-item link @click="menuClick('comming-soon')" id="comming-soon">
           <v-list-item-action>
             <v-icon>mdi-arrow-right-circle-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <div>DNF Start</div>
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
 
-        <v-list-item link @click="menuClick('comming-soon')" id="comming-soon">
+        <!-- <v-list-item link @click="menuClick('comming-soon')" id="comming-soon">
           <v-list-item-action>
             <v-icon>mdi-cart-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <div>DNF Company Store</div>
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
 
         <v-list-item link @click="menuClick('comming-soon')" id="comming-soon">
           <v-list-item-action>
@@ -269,7 +274,7 @@
             <v-icon>mdi-spider-web</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <div>DNF Tracker</div>
+            <div>Tracker</div>
           </v-list-item-content>
         </v-list-item>
 

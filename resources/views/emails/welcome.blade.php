@@ -298,7 +298,7 @@
                   style="line-height: 24px; text-align: center; padding:30px 20px; margin: auto; font-family: 'Montserrat', system, 'Verdana', sans-serif; color: #43425D;font-size: 16px;">
                   <div style="max-width: 550px; margin: auto; font-family: 'Montserrat', system, 'Verdana', sans-serif;">
                     <p><strong>Su identificador (ID): {{$user->number_account}}</strong></p>
-                    <p>Esta identificación usted podrá usarla para cualquier gestión relacionada con DNF tales como referidos, contratación, contratos y otros más. Gracias por pertenecer a la familia DNF, le deseamos éxito en su carrera.</p>
+                    <p>Esta identificación usted podrá usarla para cualquier gestión relacionada con tales como referidos, contratación, contratos y otros más. Gracias por pertenecer a la familia, le deseamos éxito en su carrera.</p>
                   
                   <p style="color:#444444;">{{ $user->company->email_signature ?? '' }}</p>
                   </div>

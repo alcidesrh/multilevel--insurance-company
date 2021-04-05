@@ -37,7 +37,7 @@ class UserLoginResource extends JsonResource
             'role' => $this->role->slug,
             'company_id' => $this->company->id ?? null,
             'renew' => false,//!$this->is('admin') && !((bool) $this->subscription_renew),
-            'userPay' => (bool)DB::table('reset_password')->where('email', $this->email)->where('user_pay', 1)->count()
+            'userPay' => false//(bool)DB::table('reset_password')->where('email', $this->email)->where('user_pay', 1)->count()
         ];
 
         // if($this->is('agency')){

@@ -150,7 +150,7 @@ export default {
       this.getItemsAction({
         endpoint: "users",
         query: { role: "elite" },
-      }).then(resp => console.log(this.items));
+      });
     },
     remove(id) {
       if (window.confirm("Seguro desea eliminar este usuario.")) {

@@ -288,7 +288,7 @@
                 <td
                     style="line-height: 24px; text-align: center; padding:30px 20px; margin: auto; font-family: 'Montserrat', system, 'Verdana', sans-serif; color: #43425D;font-size: 16px;">
                     <div style="max-width: 550px; margin: auto; font-family: 'Montserrat', system, 'Verdana', sans-serif;">
-                      {{$message2 ? $message2 : "Usted a sido invitado por {$name} a unirse a la agencia DNF."}}
+                      {{$message2 ? $message2 : "Usted a sido invitado por {$name} a unirse a la agencia."}}
                     </div>
                 </td>
             </tr>

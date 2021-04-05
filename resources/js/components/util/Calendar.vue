@@ -255,7 +255,7 @@ export default {
     this.loading = true;
     axios
       .get("/api/computer")
-      .then((response) => {console.log(response.data.data);
+      .then((response) => {
         this.turns = response.data.data;
       })
       .catch((e) => {

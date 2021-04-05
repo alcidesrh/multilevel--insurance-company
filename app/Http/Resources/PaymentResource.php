@@ -24,8 +24,8 @@ class PaymentResource extends JsonResource
             'amount' => $this->amount,
             'type' => $this->type,
             'action' => $this->action,
-            'user' => new GenericResource(User::find($this->user_id), ['name', 'image', ['role' => ['name']]]),
-            'user2' => $this->user_target ? new GenericResource(User::find($this->user_target), ['name', 'image', ['role' => ['name']]]) : null,
+            'user' => new GenericResource(User::find($this->user_id), ['name', ['image' => ['url']], ['role' => ['name']]]),
+            'user2' => $this->user_target ? new GenericResource(User::find($this->user_target), ['name', ['image' => ['url']], ['role' => ['name']]]) : null,
         ];
     }
 }

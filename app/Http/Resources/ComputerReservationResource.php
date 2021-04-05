@@ -22,7 +22,7 @@ class ComputerReservationResource extends JsonResource
             'computer' => $this->computer,
             'day' => $this->day,
             'turn' => $this->turn,
-            'user' => new GenericResource(User::find($this->user_id), ['name', 'image', ['role' => ['name']]]),
+            'user' => new GenericResource(User::find($this->user_id), ['name', ['image' => ['url']], ['role' => ['name']]]),
 
         ];
     }

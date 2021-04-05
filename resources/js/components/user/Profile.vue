@@ -63,7 +63,7 @@
           <v-divider></v-divider>
 
           <v-row class="mt-3">
-            <v-col cols="12" class="nowrap">
+            <v-col cols="12">
               <v-icon class="mr-2">mdi-email</v-icon>
               {{item.email}}
             </v-col>

@@ -288,7 +288,7 @@
                 <td
                     style="line-height: 24px; text-align: center; padding:30px 20px; margin: auto; font-family: 'Montserrat', system, 'Verdana', sans-serif; color: #43425D;font-size: 16px;">
                     <div style="max-width: 550px; margin: auto; font-family: 'Montserrat', system, 'Verdana', sans-serif;">
-                      Por favor haga click en el boton Cambiar Contraseña para poder crear una contraseña nueva e ingresar al sistema DNF.
+                      Por favor haga click en el boton Cambiar Contraseña para poder crear una contraseña nueva e ingresar al sistema.
                     </div>
                 </td>
             </tr>

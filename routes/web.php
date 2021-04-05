@@ -20,6 +20,8 @@ Route::post('api/authenticate', 'UserController@authenticate')->name('authentica
 
 Route::post('api/user-reset-password', 'UserController@resetPassword')->name('user.reset_password');
 
+Route::get('users-select-test', 'UserController@usersForSelectTest')->name('user_test.users-select');//Test users
+
 Route::group(['middleware' => 'auth:web', 'prefix' => 'api'], function () {
 
     Route::post('logout', 'UserController@logout')->name('logout');
