@@ -257,20 +257,19 @@ export default {
     this.email = this.newPassword || "";
 
     axios.get("/users-select-test").then((response) => {
-      this.items = [{ header: "Role Admin" }, { divider: true }].concat(
-        response.data.data
-      );
-      this.items.splice(
-        3,
-        0,
-        ...[{ header: "Role Agency" }, { divider: true }]
-      );
-      this.items.splice(7, 0, ...[{ header: "Role Elite" }, { divider: true }]);
-      this.items.splice(
-        11,
-        0,
-        ...[{ header: "Role Broker" }, { divider: true }]
-      );
+      this.items = [{ header: "Role Admin" }, ...response.data.data, { divider: true }];
+      // this.items.splice(
+      //   3,
+      //   0,
+      //   ...[{ header: "Role Agency" }, { divider: true }]
+      // );
+      // this.items.splice(7, 0, ...[{ header: "Role Elite" }, { divider: true }]);
+      // this.items.splice(
+      //   11,
+      //   0,
+      //   ...[{ header: "Role Broker" }, { divider: true }]
+      // );
+      console.log(this.items)
     });
   },
 };
