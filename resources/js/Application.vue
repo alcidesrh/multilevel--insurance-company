@@ -508,6 +508,7 @@ export default {
     }
   },
   created() {
+    alert('sdfdsf');
     if (typeof user == typeof "string") {
       this.user = Object.values(JSON.parse(user));
       this.item.user_number = this.user[1];

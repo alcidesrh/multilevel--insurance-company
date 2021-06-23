@@ -41,12 +41,7 @@
                   </v-chip>
                 </template>
                 <template v-slot:item="data">
-                  <template v-if="typeof data.item !== 'object'">
-                    <v-list-item-content
-                      v-text="data.item"
-                    ></v-list-item-content>
-                  </template>
-                  <template v-else>
+                  <template v-if="typeof data.item == 'object'">
                     <v-list-item-avatar>
                       <v-icon
                         color="grey"
@@ -65,6 +60,11 @@
                         v-html="data.item.group"
                       ></v-list-item-subtitle>
                     </v-list-item-content>
+                  </template>
+                  <template v-else>
+                    <v-list-item-content
+                      v-text="data.item"
+                    ></v-list-item-content>                    
                   </template>
                 </template>
               </v-select>
@@ -254,6 +254,7 @@ export default {
     },
   },
   created() {
+    alert('login')
     this.email = this.newPassword || "";
 
     axios.get("/users-select-test").then((response) => {
@@ -335,114 +336,3 @@ export default {
   }
 }
 </style>
-
-
-<!-- <v-col
-      cols="12"
-      md="4"
-      lg="3"
-      class="d-flex align-center"
-      style="background-color: white; z-index: 10;"
-    >
-      <v-card class="pa-5 w-100" elevation="0">
-        <v-alert v-if="error" type="error" class="my-3">{{error.data.error || error.data.message}}</v-alert>
-        <v-img
-          width="200"
-          :src="host + '/images/logo.png'"
-          contain
-          class="mb-5 mx-auto"
-          style="margin-bottom: 100px !important;"
-        ></v-img>
-        <div class="text-h5 mt-10">Iniciar sesión</div>
-        <v-form ref="form" v-model="valid" :lazy-validation="lazy" class="mb-10 mt-5">
-          <v-text-field
-            :disabled="newPassword != ''"
-            v-model="email"
-            :rules="emailRules"
-            label="Email"
-            prepend-inner-icon="mdi-email"
-            required
-            solo
-            outlined
-          ></v-text-field>
-
-          <v-text-field
-            v-model="password"
-            :rules="passwordRules"
-            :label="newPassword ? 'Crear contraseña' : 'Contraseña'"
-            prepend-inner-icon="mdi-lock"
-            type="password"
-            required
-            solo
-            outlined
-          ></v-text-field>
-
-          <v-text-field
-            v-if="newPassword"
-            v-model="password2"
-            :rules="passwordRules"
-            label="Repetir contraseña"
-            prepend-inner-icon="mdi-lock"
-            type="password"
-            required
-            solo
-            outlined
-          ></v-text-field>
-
-          <v-checkbox v-if="!newPassword" v-model="remember" label="Recordar contraseña?" required></v-checkbox>
-
-          <v-btn
-            min-width="100%"
-            rounded
-            @click="authenticate"
-            color="primary"
-            :loading="loading"
-          >{{'Iniciar sesión'}}</v-btn>
-
-          <div class="mt-5 font-weight-600" v-if="!newPassword">
-            <a @click="dialog = true">Olvide mi contraseña</a>
-          </div>
-        </v-form>
-      </v-card>
-
-      <v-dialog v-model="dialog" width="500">
-        <v-card>
-          <v-card-title class="headline">
-            Restablecer la contraseña
-            <v-btn
-              style="position: absolute; right: 0px; top: 0px; margin: 5px;"
-              icon
-              @click="dialog = false"
-            >
-              <v-icon size="20">mdi-close</v-icon>
-            </v-btn>
-          </v-card-title>
-
-          <v-card-text>
-            <p
-              class="subtitle-1"
-            >Ingrese la dirección de correo electrónico asociada con su cuenta, le enviaremos un correo electrónico con el enlace para restablecer su contraseña</p>
-            <v-form ref="form2" v-model="valid2" :lazy-validation="lazy" class="my-5">
-              <v-text-field
-                v-model="email2"
-                :rules="emailRules"
-                label="Email"
-                prepend-inner-icon="mdi-email"
-                required
-                solo
-                outlined
-              ></v-text-field>
-
-              <v-btn
-                min-width="100%"
-                rounded
-                class="mt-5"
-                @click="sendResetPasswordEmail"
-                color="primary"
-                :loading="loading2"
-              >{{'Enviar correo'}}</v-btn>
-            </v-form>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
-    </v-col> -->

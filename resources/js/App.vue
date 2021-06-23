@@ -55,6 +55,7 @@ export default {
     },
   },
   async created() {
+    alert('sdfdsf');
     EventBus.$on("alert", (payload) => {
       if (payload.response) {
         if (payload.response.status == 500) this.snackBarColor = payload.color;
