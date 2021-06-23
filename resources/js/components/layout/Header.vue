@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="header">
     <v-navigation-drawer
       v-model="drawer"
       app
       clipped
       :mini-variant.sync="mini"
       :permanent="$vuetify.breakpoint.mdAndUp"
+      class="primary"
     >
       <v-container class="mb-3" v-if="!mini && $vuetify.breakpoint.mdAndUp">
         <v-icon @click.stop="mini = !mini" class="rotate180 float-right"
@@ -328,11 +329,12 @@
       clipped
       right
       :mini-variant.sync="mini2"
+      class="primary"
     >
       <v-container class="pb-0" v-if="!mini2">
         <v-icon @click.stop="mini2 = !mini2">mdi-exit-to-app</v-icon>
         <!-- <v-spacer></v-spacer> -->
-        <div class="d-inline-block float-right font-weight-600">
+        <div class="d-inline-block float-right font-weight-600" style="color: white">
           <v-icon>mdi-cogs</v-icon> Configuración
         </div>
       </v-container>
@@ -528,13 +530,7 @@
       >
 
       <v-toolbar-title style="width: 256px">
-        <v-img
-          :src="host + '/images/logo.png'"
-          width="120"
-          aspect-ratio="2.5"
-          contain
-          class="mx-auto"
-        ></v-img>
+        <h4 class="ml-5" style="color: white">Logo</h4>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -678,6 +674,18 @@ export default {
 .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled):hover
   > div
   > i {
+  color: white !important;
+}
+
+</style>
+<style>
+.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: white !important;
+}
+.header .theme--light.v-icon{
+  color: white !important;
+}
+.header .v-list-item__content{
   color: white !important;
 }
 </style>
