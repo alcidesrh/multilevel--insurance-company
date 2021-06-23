@@ -655,7 +655,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .header .rotate180 {
   transform: rotate(180deg);
 }
@@ -674,16 +674,6 @@ export default {
 .header .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled):hover
   > div
   > i {
-  color: white !important;
-}
-
-.header .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
-    color: white !important;
-}
-.header .theme--light.v-icon{
-  color: white !important;
-}
-.header .v-list-item__content{
   color: white !important;
 }
 

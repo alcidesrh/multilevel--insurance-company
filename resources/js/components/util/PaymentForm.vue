@@ -118,7 +118,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 iframe {
   border: 1px solid #949494;
 }

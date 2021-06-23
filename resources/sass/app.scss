@@ -58,3 +58,13 @@ html {
     position: absolute;
 }
 
+.header .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: white !important;
+}
+.header .theme--light.v-icon{
+  color: white !important;
+}
+.header .v-list-item__content{
+  color: white !important;
+}
+
