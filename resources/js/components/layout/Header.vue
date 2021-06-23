@@ -655,31 +655,29 @@ export default {
 };
 </script>
 
-<style scoped>
-.rotate180 {
+<style>
+.header .rotate180 {
   transform: rotate(180deg);
 }
-.section-active {
+.header .section-active {
   background-color: #3A76D2;
 }
-.section-active.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled),
-.section-active .mdi {
+.header .section-active.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled),
+.header .section-active .mdi {
   color: white !important;
 }
 
-.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled):hover {
+.header .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled):hover {
   background-color: #3A76D2;
   color: white !important;
 }
-.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled):hover
+.header .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled):hover
   > div
   > i {
   color: white !important;
 }
 
-</style>
-<style>
-.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+.header .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
     color: white !important;
 }
 .header .theme--light.v-icon{
@@ -688,4 +686,5 @@ export default {
 .header .v-list-item__content{
   color: white !important;
 }
+
 </style>
